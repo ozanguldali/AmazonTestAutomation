@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/inspectionProfiles/
+src/main/resources/
+target/generated-sources/
+target/generated-test-sources/
