@@ -1,0 +1,25 @@
+{
+  "amazon": {
+    "url": "https://www.amazon.com",
+    "elements": {
+      "mainPanel": "//*[@id='a-page']",
+      "sign in": "//*[@id='nav-link-accountList']/span[1]",
+      "email": "//*[@id='ap_email']",
+      "password": "//*[@id='ap_password']",
+      "continue to sign in button": "//*[@id='continue']",
+      "sign in button": "//*[@id='signInSubmit']",
+      "search field": "//*[@id='twotabsearchtextbox']",
+      "search button": "//*[@id='nav-search']/form/div[2]/div/input",
+      "second page button": "//*[@id='pagn']/span[3]/a",
+      "18th product": "//*[@id='result_18']/div/div/div/div[2]/div[1]/div[1]/a/h2",
+      "add to cart button": "//*[@id='add-to-cart-button']",
+      "add to list selector button": "//*[@id='add-to-wishlist-button']",
+      "add to list button": "//*[@id='add-to-wishlist-button-submit']",
+      "add to wish list button": "//*[@id='atwl-list-name-CQI4SYTL3R3S']",
+      "close add to list frame": "//*[@class=' a-button-close a-declarative']",
+      "account and list button": "//*[@id='nav-link-accountList']/span[1]",
+      "wish list button": "//*[@id='nav-flyout-wl-items']/div/a[1]/span",
+      "delete product button": "//*[@id='a-autoid-5']/span/input"
+    }
+  }
+}
