@@ -17,7 +17,7 @@ Feature: Amazon - Insider Test Automation Project
     And I see continue to sign in button element by xpath
 
     Then I fill by xpath
-      | email | ozan.guldali@hotmail.com |
+      | email | amazon@example.com |
 
     And I click continue to sign in button element by xpath
 
@@ -28,7 +28,7 @@ Feature: Amazon - Insider Test Automation Project
     And I see sign in button element by xpath
 
     When I fill by xpath
-      | password | 2018insider |
+      | password | yourpassword |
 
     And I click sign in button element by xpath
 
