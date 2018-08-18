@@ -3,7 +3,7 @@
     "url": "https://www.amazon.com",
     "elements": {
       "mainPanel": "//*[@id='a-page']",
-      "sign in": "//*[@id='nav-link-accountList']/span[1]",
+      "sign in": "//a[@class='nav-action-button' and @data-nav-ref='nav_signin']/span[@class='nav-action-inner']",
       "email": "//*[@id='ap_email']",
       "password": "//*[@id='ap_password']",
       "continue to sign in button": "//*[@id='continue']",
@@ -19,7 +19,7 @@
       "close add to list frame": "//*[@class=' a-button-close a-declarative']",
       "account and list button": "//*[@id='nav-link-accountList']/span[1]",
       "wish list button": "//*[@id='nav-flyout-wl-items']/div/a[1]/span",
-      "delete product button": "//*[@id='a-autoid-5']/span/input"
+      "delete from list button": "//input[contains(@name,'deleteItem') and @type='submit' and @class='a-button-input a-declarative']"
     }
   }
 }

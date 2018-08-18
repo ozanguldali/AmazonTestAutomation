@@ -1,5 +1,7 @@
 Feature: Amazon - Insider Test Automation Project
 
+
+  @chrome
   Scenario: 1 - Amazon Wish List In/Out Test
 
     Given I open amazon page
@@ -8,7 +10,13 @@ Feature: Amazon - Insider Test Automation Project
 
     When I see the url is "https://www.amazon.com/"
 
-    Then I click sign in element by xpath
+    Then I see account and list button element by xpath
+
+    When I mouse hover on account and list button element by xpath
+
+    Then I see sign in element by xpath
+
+    When I click sign in element by xpath
 
     And I wait for page
 
@@ -17,7 +25,7 @@ Feature: Amazon - Insider Test Automation Project
     And I see continue to sign in button element by xpath
 
     Then I fill by xpath
-      | email | amazon@example.com |
+      | email | ozan.guldali@hotmail.com |
 
     And I click continue to sign in button element by xpath
 
@@ -28,7 +36,7 @@ Feature: Amazon - Insider Test Automation Project
     And I see sign in button element by xpath
 
     When I fill by xpath
-      | password | yourpassword |
+      | password | 2018insider |
 
     And I click sign in button element by xpath
 
@@ -48,7 +56,7 @@ Feature: Amazon - Insider Test Automation Project
     Then I see webpage title as "Amazon.com: samsung"
 
     And I see text
-      | 1-16 of over |
+      | 1-16 of over  |
       | results for   |
       | "samsung"     |
 
@@ -85,7 +93,7 @@ Feature: Amazon - Insider Test Automation Project
 
     Then I see account and list button element by xpath
 
-    When I click account and list button element by xpath
+    When I mouse hover on account and list button element by xpath
 
     And I wait for 3 seconds
 
@@ -97,9 +105,9 @@ Feature: Amazon - Insider Test Automation Project
 
     Then I see my added product is on the list
 
-    And I see delete product button element by xpath
+    And I see delete from list button element by xpath
 
-    When I click delete product button element by xpath
+    When I click delete from list button element by xpath
     
     And I wait for 3 seconds
 

@@ -1,6 +1,7 @@
 package stepdefs;
 
 import config.amazon.checkProduct;
+import config.browserDecision;
 import config.jsonParser;
 import config.amazon.saveProduct;
 import config.selectDecision;
@@ -9,6 +10,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import gherkin.formatter.model.DataTableRow;
@@ -17,14 +19,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
 import com.google.gson.JsonObject;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class ProjectStepDefinitions {
 
-
+    private String osValue;
     private WebDriver chromeDriver;
     private By by;
     private List<String> productList = new ArrayList<String>();
@@ -48,23 +47,45 @@ public class ProjectStepDefinitions {
 
     public ProjectStepDefinitions() {
 
-        ChromeOptions options;
-        System.setProperty("webdriver.chrome.driver", (new File("tools/drivers/chromedriver.exe")).getAbsolutePath());
-        options = new ChromeOptions();
-        options.addArguments("test-type");
-        options.addArguments("start-maximized");
-        options.addArguments("incognito");
-        options.addArguments("no-sandbox");
-        this.chromeDriver = new ChromeDriver(options);
+        osValue = System.getProperty("os.name");
 
     }
 
-    @Before
-    public void beforeScenario(Scenario scenario){
+//    @Before
+//    public void beforeScenario(Scenario scenario){
+//
+//        String browser = "chrome";
+//
+//        this.chromeDriver = browserDecision.browser(osValue, browser);
+//
+//        LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
+//
+//    }
+
+    @Before("@chrome")
+    public void chromeScenario(Scenario scenario){
+
+        String browser = "chrome";
+
+        this.chromeDriver = browserDecision.browser(osValue, browser);
 
         LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
 
     }
+
+    @Before("@firefox")
+    public void firefoxScenario(Scenario scenario){
+
+        String osValue = System.getProperty("os.name");
+
+        String browser = "firefox";
+
+        this.chromeDriver = browserDecision.browser(osValue, browser);
+
+        LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
+
+    }
+
 
     @After
     public void afterScenario(Scenario scenario) {
@@ -77,6 +98,13 @@ public class ProjectStepDefinitions {
         String result = scenario.isFailed() ? "with errors" : "succesfully";
         LOGGER.info(String.format("\n\t[%d] > Scenario [%s] finished %s\t", scenariosCounter, scenario.getName(), result));
         LOGGER.info(String.format("\n\t%d of %d scenarios failed so far\t", failedScenariosCounter, scenariosCounter));
+
+    }
+
+    @Given("^I use (\\w+(?: \\w+)*) driver")
+    public void useDriver(String browserKey) {
+
+
 
     }
 
@@ -148,14 +176,39 @@ public class ProjectStepDefinitions {
             if (pageKey.contains("product"))
                 this.productList.add(saveProduct.main(chromeDriver, this.by));
 
-            WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
-            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+            //WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
+            //wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+            //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+            WebElement element = this.chromeDriver.findElement(by);
             Actions actions = new Actions(chromeDriver);
             actions.moveToElement(element).click().perform();
 
             LOGGER.info(String.format("\n\tClicking link with label %s\n\t", pageKey));
 
-        } catch ( AssertionError e) {
+        } catch ( AssertionError e ) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Then("^I mouse hover on (\\w+(?: \\w+)*) element by (\\w+(?: \\w+)*)$")
+    public void iMouseHover(String pageKey, String selectKey) {
+
+        try {
+
+            JsonObject pageElementObject = this.pageObject.get("elements").getAsJsonObject();
+            String pageElement = pageElementObject.get(pageKey).getAsString();
+
+            this.by = selectDecision.main(this.by, selectKey, pageElement);
+
+            WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+            Actions actions = new Actions(chromeDriver);
+            actions.moveToElement(element).moveToElement(this.chromeDriver.findElement(by)).build().perform();
+
+            LOGGER.info(String.format("\n\tMouse hover on %s\n\t", pageKey));
+
+        } catch ( AssertionError e ) {
             e.printStackTrace();
         }
 
@@ -195,7 +248,7 @@ public class ProjectStepDefinitions {
             chromeDriver.findElements( this.by ).clear();
             chromeDriver.findElement( this.by ).sendKeys( value );
 
-            LOGGER.info(String.format("\n\tFiiling the key: [%s] \t with the value: [%s]\n\t", key, value));
+            LOGGER.info(String.format("\n\tFilling the key: [%s] \t with the value: [%s]\n\t", key, value));
 
         }
 
@@ -255,7 +308,7 @@ public class ProjectStepDefinitions {
 
         boolean isThere = checkProduct.main(this.productList, chromeDriver);
 
-        if (isThere) {
+        if (!isThere) {
             LOGGER.info("\n\tThe product is not on the list as expected.\n\t");
         } else {
             throw new java.lang.AssertionError("The product is STILL on the list!");
@@ -275,7 +328,5 @@ public class ProjectStepDefinitions {
         }
 
     }
-
-
 
 }

@@ -15,7 +15,7 @@ public class jsonParser {
         Object object = null;
 
         try {
-            object = jsonParser.parse(new FileReader(projectDir + "\\src\\test\\resources\\pageElements.json"));
+            object = jsonParser.parse(new FileReader(projectDir + "/src/test/resources/pageElements.json"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
