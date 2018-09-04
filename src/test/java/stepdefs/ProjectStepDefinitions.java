@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit;
 public class ProjectStepDefinitions {
 
     private String osValue;
-    private WebDriver chromeDriver;
+    private WebDriver webDriver;
     private WebDriver[] listDriver;
     private List<WebDriver> webDriverList;
     private HashMap<String, Boolean> driverMap = new HashMap<String, Boolean>();
@@ -62,19 +62,31 @@ public class ProjectStepDefinitions {
 //
 //        String browser = "chrome";
 //
-//        this.chromeDriver = browserDecision.browser(osValue, browser);
+//        this.webDriver = browserDecision.browser(osValue, browser);
 //
 //        LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
 //
 //    }
 
-    @Before("@chrome")
+    @Before
+    public void beforeScenario(Scenario scenario){
+
+        JsonObject jsonObject = jsonParser.main();
+        String browser = jsonObject.get("browser").getAsString();
+
+        this.webDriver = browserDecision.browser(osValue, browser);
+
+        LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
+
+    }
+    
+/*    @Before("@chrome")
     public void chromeScenario(Scenario scenario){
 
         String browser = "chrome";
         this.driverMap.put("chrome",true);
 
-        this.chromeDriver = browserDecision.browser(osValue, browser);
+        this.webDriver = browserDecision.browser(osValue, browser);
 
         LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
 
@@ -86,11 +98,11 @@ public class ProjectStepDefinitions {
         String browser = "firefox";
         this.driverMap.put("firefox",true);
 
-        this.chromeDriver = browserDecision.browser(osValue, browser);
+        this.webDriver = browserDecision.browser(osValue, browser);
 
         LOGGER.info(String.format("\n\n\t[%d] > Scenario [%s] started\t", ++scenariosCounter, scenario.getName()));
 
-    }
+    }*/
 
 
     @After
@@ -99,7 +111,7 @@ public class ProjectStepDefinitions {
         if (scenario.isFailed()) {
             ++failedScenariosCounter;
         } else
-            chromeDriver.quit();
+            webDriver.quit();
 
         String result = scenario.isFailed() ? "with errors" : "succesfully";
         LOGGER.info(String.format("\n\t[%d] > Scenario [%s] finished %s\t", scenariosCounter, scenario.getName(), result));
@@ -107,12 +119,12 @@ public class ProjectStepDefinitions {
 
     }
 
-    @Given("^I use (\\w+(?: \\w+)*) driver")
+/*    @Given("^I use (\\w+(?: \\w+)*) driver")
     public void useDriver(String browserKey) {
 
 
 
-    }
+    }*/
 
     @When("^I open (\\w+(?: \\w+)*) page$")
     public void openPage(String flowKey) {
@@ -121,7 +133,7 @@ public class ProjectStepDefinitions {
         this.pageObject = jsonObject.get(flowKey).getAsJsonObject();
         String urlString = this.pageObject.get("url").getAsString();
 
-        chromeDriver.get(urlString);
+        webDriver.get(urlString);
 
         LOGGER.info(String.format("\n\tNavigate to the website: %s\n\t", urlString));
 
@@ -139,7 +151,7 @@ public class ProjectStepDefinitions {
     @When("^I wait for page$")
     public void iWaitForPage() {
 
-        chromeDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         LOGGER.info("\n\tWait for page\n\t");
 
@@ -148,7 +160,7 @@ public class ProjectStepDefinitions {
     @Then("^I see the url is \"([^\"]*)\"$")
     public void iSeeTheUrlIs(String urlExpected) {
 
-        String currentUrl = chromeDriver.getCurrentUrl();
+        String currentUrl = webDriver.getCurrentUrl();
         Assert.assertEquals(currentUrl, urlExpected);
 
         LOGGER.info(String.format("\n\tCheck if the url is: %s\n\t", urlExpected));
@@ -159,7 +171,7 @@ public class ProjectStepDefinitions {
     public void iSeeTheUrlContains(String urlExpected) {
 
         try {
-            String currentUrl = chromeDriver.getCurrentUrl();
+            String currentUrl = webDriver.getCurrentUrl();
             Assert.assertTrue(currentUrl.contains(urlExpected));
 
             LOGGER.info(String.format("\n\tCheck if the url contains: %s\n\t", urlExpected));
@@ -180,13 +192,13 @@ public class ProjectStepDefinitions {
             this.by = selectDecision.main(this.by, selectKey, pageElement);
 
             if (pageKey.contains("product"))
-                this.productList.add(saveProduct.main(chromeDriver, this.by));
+                this.productList.add(saveProduct.main(webDriver, this.by));
 
-            //WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
+            //WebDriverWait wait = new WebDriverWait(webDriver, 10);
             //wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
             //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
-            WebElement element = this.chromeDriver.findElement(by);
-            Actions actions = new Actions(chromeDriver);
+            WebElement element = this.webDriver.findElement(by);
+            Actions actions = new Actions(webDriver);
             actions.moveToElement(element).click().perform();
 
             LOGGER.info(String.format("\n\tClicking link with label %s\n\t", pageKey));
@@ -207,10 +219,10 @@ public class ProjectStepDefinitions {
 
             this.by = selectDecision.main(this.by, selectKey, pageElement);
 
-            WebDriverWait wait = new WebDriverWait(chromeDriver, 10);
+            WebDriverWait wait = new WebDriverWait(webDriver, 10);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
-            Actions actions = new Actions(chromeDriver);
-            actions.moveToElement(element).moveToElement(this.chromeDriver.findElement(by)).build().perform();
+            Actions actions = new Actions(webDriver);
+            actions.moveToElement(element).moveToElement(this.webDriver.findElement(by)).build().perform();
 
             LOGGER.info(String.format("\n\tMouse hover on %s\n\t", pageKey));
 
@@ -228,7 +240,7 @@ public class ProjectStepDefinitions {
 
         this.by = selectDecision.main(this.by, selectKey, pageElement);
 
-        boolean existElement = chromeDriver.findElements(by).size() != 0;
+        boolean existElement = webDriver.findElements(by).size() != 0;
 
         if ( existElement ) {
             LOGGER.info(String.format("\n\tCheck web element: %s\n\t", pageKey));
@@ -251,8 +263,8 @@ public class ProjectStepDefinitions {
 
             this.by = selectDecision.main(this.by, selectKey, pageElement);
 
-            chromeDriver.findElements( this.by ).clear();
-            chromeDriver.findElement( this.by ).sendKeys( value );
+            webDriver.findElements( this.by ).clear();
+            webDriver.findElement( this.by ).sendKeys( value );
 
             LOGGER.info(String.format("\n\tFilling the key: [%s] \t with the value: [%s]\n\t", key, value));
 
@@ -263,7 +275,7 @@ public class ProjectStepDefinitions {
     @Then("^I see webpage title as \"([^\"]*)\"$")
     public void iSeeWebpageTitleAs(String expectedTitle) {
 
-        String actualTitle = chromeDriver.getTitle();
+        String actualTitle = webDriver.getTitle();
 
         if (expectedTitle.equals(actualTitle)) {
             LOGGER.info(String.format("\n\tThe webpage title is [%s] as expected [%s]\n\t", actualTitle, expectedTitle));
@@ -284,11 +296,11 @@ public class ProjectStepDefinitions {
 
             String key = row.getCells().get(0);
 
-            boolean isThere = chromeDriver.getPageSource().contains(key);
+            boolean isThere = webDriver.getPageSource().contains(key);
             if (isThere) {
                 LOGGER.info(String.format("\n\tThe text is in the page: %s\n\t", key));
             } else {
-                String temp = chromeDriver.getPageSource();
+                String temp = webDriver.getPageSource();
                 System.out.println(temp);
                 throw new java.lang.AssertionError(String.format("\n\tThe text is NOT in the page: %s\n\t", key));
             }
@@ -299,7 +311,7 @@ public class ProjectStepDefinitions {
     @Then("^I see my added product is on the list$")
     public void iSeeMyAddedProductIsOnTheList() {
 
-        boolean isThere = checkProduct.main(this.productList, chromeDriver);
+        boolean isThere = checkProduct.main(this.productList, webDriver);
 
         if (isThere) {
             LOGGER.info("\n\tThe product is on the list as expected.\n\t");
@@ -312,7 +324,7 @@ public class ProjectStepDefinitions {
     @Then("^I see my added product is not on the list$")
     public void iSeeMyAddedProductIsNotOnTheList() {
 
-        boolean isThere = checkProduct.main(this.productList, chromeDriver);
+        boolean isThere = checkProduct.main(this.productList, webDriver);
 
         if (!isThere) {
             LOGGER.info("\n\tThe product is not on the list as expected.\n\t");
@@ -326,8 +338,8 @@ public class ProjectStepDefinitions {
     public void iRefreshThePage() {
 
         try {
-            String currentUrl = chromeDriver.getCurrentUrl();
-            chromeDriver.navigate().refresh();
+            String currentUrl = webDriver.getCurrentUrl();
+            webDriver.navigate().refresh();
             LOGGER.info(String.format("\n\tThe page [ %s ] has been refreshed\n\t", currentUrl));
         } catch ( AssertionError e ) {
             e.printStackTrace();

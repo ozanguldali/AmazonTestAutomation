@@ -2,7 +2,7 @@
 Feature: Amazon - Insider Test Automation Project
 
 
-  @chrome @firefox @smoke @regression @end2end
+  @smoke @regression @end2end
   Scenario: 1 - Amazon Wish List In/Out Test
 
     Given I open amazon page
