@@ -1,7 +1,8 @@
+@scenarios
 Feature: Amazon - Insider Test Automation Project
 
 
-  @chrome
+  @chrome @firefox @smoke @regression @end2end
   Scenario: 1 - Amazon Wish List In/Out Test
 
     Given I open amazon page
@@ -119,6 +120,18 @@ Feature: Amazon - Insider Test Automation Project
     And I wait for page
 
     Then I see my added product is not on the list
+
+
+
+
+  @chrome @regression
+  Scenario: 2 - second test
+
+    Given I open amazon page
+
+    And I wait for page
+
+    When I see the url is "https://www.amazon.com/"
 
 
 

@@ -26,6 +26,7 @@ import org.springframework.stereotype.Component;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -33,6 +34,9 @@ public class ProjectStepDefinitions {
 
     private String osValue;
     private WebDriver chromeDriver;
+    private WebDriver[] listDriver;
+    private List<WebDriver> webDriverList;
+    private HashMap<String, Boolean> driverMap = new HashMap<String, Boolean>();
     private By by;
     private List<String> productList = new ArrayList<String>();
 
@@ -44,10 +48,12 @@ public class ProjectStepDefinitions {
     private static Logger LOGGER = Logger.getLogger(ProjectStepDefinitions.class);
 
 
-
+// multiple browser support üzerine çalışılacak
     public ProjectStepDefinitions() {
 
         osValue = System.getProperty("os.name");
+        this.driverMap.put("chrome", false);
+        this.driverMap.put("firefox", false);
 
     }
 
@@ -66,6 +72,7 @@ public class ProjectStepDefinitions {
     public void chromeScenario(Scenario scenario){
 
         String browser = "chrome";
+        this.driverMap.put("chrome",true);
 
         this.chromeDriver = browserDecision.browser(osValue, browser);
 
@@ -76,9 +83,8 @@ public class ProjectStepDefinitions {
     @Before("@firefox")
     public void firefoxScenario(Scenario scenario){
 
-        String osValue = System.getProperty("os.name");
-
         String browser = "firefox";
+        this.driverMap.put("firefox",true);
 
         this.chromeDriver = browserDecision.browser(osValue, browser);
 
