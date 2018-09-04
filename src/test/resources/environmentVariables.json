@@ -1,0 +1,8 @@
+{
+  "browser": "chrome",
+  "dbUsername": "",
+  "dbPassword": "",
+  "dbUrl": "",
+  "dbDriverClass": "",
+  "restDomain": ""
+}

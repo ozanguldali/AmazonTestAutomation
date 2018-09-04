@@ -1,6 +1,4 @@
 {
-  "browser": "chrome",
-
   "amazon": {
     "url": "https://www.amazon.com",
     "elements": {

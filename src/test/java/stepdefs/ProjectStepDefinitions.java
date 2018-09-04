@@ -71,7 +71,7 @@ public class ProjectStepDefinitions {
     @Before
     public void beforeScenario(Scenario scenario){
 
-        JsonObject jsonObject = jsonParser.main();
+        JsonObject jsonObject = jsonParser.main("environmentVariables");
         String browser = jsonObject.get("browser").getAsString();
 
         this.webDriver = browserDecision.browser(osValue, browser);
@@ -129,7 +129,7 @@ public class ProjectStepDefinitions {
     @When("^I open (\\w+(?: \\w+)*) page$")
     public void openPage(String flowKey) {
 
-        JsonObject jsonObject = jsonParser.main();
+        JsonObject jsonObject = jsonParser.main("pageElements");
         this.pageObject = jsonObject.get(flowKey).getAsJsonObject();
         String urlString = this.pageObject.get("url").getAsString();
 

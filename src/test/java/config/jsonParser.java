@@ -7,7 +7,7 @@ import java.io.FileReader;
 
 public class jsonParser {
 
-    public static JsonObject main() {
+    public static JsonObject main(String jsonFile) {
 
         String projectDir = System.getProperty("user.dir");
 
@@ -15,7 +15,7 @@ public class jsonParser {
         Object object = null;
 
         try {
-            object = jsonParser.parse(new FileReader(projectDir + "/src/test/resources/pageElements.json"));
+            object = jsonParser.parse(new FileReader(projectDir + "/src/test/resources/" + jsonFile + ".json"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

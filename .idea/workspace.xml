@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5144106b-c181-4b84-b34c-66b416d2758b" name="Default" comment="fixes">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/environmentVariables.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/scenarios.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/scenarios.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/config/jsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/config/jsonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/pageElements.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/pageElements.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/config/jsonParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/config/jsonParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/pageElements.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pageElements.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/stepdefs/ProjectStepDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepdefs/ProjectStepDefinitions.class" afterDir="false" />
@@ -19,114 +22,92 @@
     <session id="-385783828">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="feature" value="2" />
+          <entry key="class" value="2" />
+          <entry key="feature" value="3" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="7" />
-          <entry key="json" value="1" />
+          <entry key="java" value="12" />
+          <entry key="json" value="5" />
+          <entry key="properties" value="2" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="Cucumber" value="2" />
-          <entry key="JAVA" value="7" />
-          <entry key="JSON" value="1" />
+          <entry key="CLASS" value="2" />
+          <entry key="Cucumber" value="3" />
+          <entry key="JAVA" value="12" />
+          <entry key="JSON" value="5" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="2" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="feature" value="318" />
+          <entry key="feature" value="346" />
           <entry key="gitignore" value="21" />
-          <entry key="java" value="2207" />
-          <entry key="json" value="11" />
+          <entry key="java" value="2292" />
+          <entry key="json" value="105" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="318" />
-          <entry key="JAVA" value="2207" />
-          <entry key="JSON" value="11" />
+          <entry key="Cucumber" value="346" />
+          <entry key="JAVA" value="2292" />
+          <entry key="JSON" value="105" />
           <entry key="PLAIN_TEXT" value="42" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-              <folding>
-                <element signature="method#afterScenario#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#waitForNSeconds#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iWaitForPage#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeTheUrlIs#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeTheUrlContains#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iClickElement#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iMouseHover#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeElement#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iFillBy#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeWebpageTitleAs#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeText#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeMyAddedProductIsOnTheList#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iSeeMyAddedProductIsNotOnTheList#0;class#ProjectStepDefinitions#0" />
-                <element signature="method#iRefreshThePage#0;class#ProjectStepDefinitions#0" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/features/scenarios.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/environmentVariables.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="129" column="9" lean-forward="true" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-              <folding>
-                <element signature="e#65#2674#0" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/config/browserDecision.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/config/selectDecision.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/main/runTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/config/jsonParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="185">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -145,7 +126,16 @@
       <find>Fii</find>
       <find>delete product button</find>
       <find>product</find>
+      <find>driverMap</find>
+      <find>driver</find>
+      <find>driver</find>
+      <find>webDriver</find>
+      <find>chromeDriver</find>
     </findStrings>
+    <replaceStrings>
+      <replace>driver</replace>
+      <replace>webDriver</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -163,13 +153,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/config/jsonParser.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/pageElements.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java" />
         <option value="$PROJECT_DIR$/src/test/java/main/runTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/config/browserDecision.java" />
         <option value="$PROJECT_DIR$/src/test/java/features/scenarios.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/environmetVariables.json" />
+        <option value="$PROJECT_DIR$/src/test/java/config/jsonParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/pageElements.json" />
+        <option value="$PROJECT_DIR$/src/test/resources/environmentVariables.json" />
       </list>
     </option>
   </component>
@@ -190,6 +182,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,7 +216,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insiderTestAmazon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmazonTestAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insiderTestAmazon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmazonTestAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insiderTestAmazon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmazonTestAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insiderTestAmazon" type="b2602c69:ProjectViewProjectNode" />
@@ -238,15 +256,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536050024819" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536056463050" />
     <property name="last.edited.regexp" value="@chrome" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -409,7 +424,9 @@
       <workItem from="1534785398835" duration="897000" />
       <workItem from="1535908286454" duration="2789000" />
       <workItem from="1535972769093" duration="1584000" />
-      <workItem from="1536049745951" duration="276000" />
+      <workItem from="1536049745951" duration="1672000" />
+      <workItem from="1536055761307" duration="60000" />
+      <workItem from="1536055831194" duration="445000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore update">
       <created>1534503361386</created>
@@ -432,25 +449,24 @@
       <option name="project" value="LOCAL" />
       <updated>1536049975710</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixes">
+      <created>1536050253396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536050253396</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixes">
+      <created>1536051260621</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536051260621</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="runTest - 2018.09.02 at 20h 44m 21s.xml">
-      <configuration name="runTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="runTest - 2018.09.02 at 20h 44m 48s.xml">
-      <configuration name="runTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="runTest - 2018.09.02 at 20h 49m 10s.xml">
-      <configuration name="runTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="runTest - 2018.09.02 at 20h 49m 19s.xml">
-      <configuration name="runTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="runTest - 2018.09.02 at 20h 49m 50s.xml">
-      <configuration name="runTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="runTest - 2018.09.02 at 20h 50m 03s.xml">
       <configuration name="runTest" configurationId="JUnit" />
     </history-entry>
@@ -466,15 +482,30 @@
     <history-entry file="runTest - 2018.09.02 at 20h 53m 13s.xml">
       <configuration name="runTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Scenario__2_-_second_test - 2018.09.04 at 11h 33m 52s.xml">
+      <configuration name="Scenario: 2 - second test" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Scenario__2_-_second_test - 2018.09.04 at 11h 52m 09s.xml">
+      <configuration name="Scenario: 2 - second test" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Scenario__2_-_second_test - 2018.09.04 at 11h 53m 15s.xml">
+      <configuration name="Scenario: 2 - second test" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Scenario__2_-_second_test - 2018.09.04 at 13h 17m 18s.xml">
+      <configuration name="Scenario: 2 - second test" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Scenario__2_-_second_test - 2018.09.04 at 13h 18m 00s.xml">
+      <configuration name="Scenario: 2 - second test" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21667000" />
+    <option name="totallyTimeSpent" value="23568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="720" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28756058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28029078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -483,7 +514,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3280255" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3280255" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -549,36 +580,6 @@
     <MESSAGE value="fixes" />
     <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java</url>
-          <line>86</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="atlassian-ide-plugin-workspace-issues">
     <option name="view">
       <JiraViewConfigurationBean>
@@ -596,24 +597,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/config/jsonParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="17" column="108" selection-start-line="17" selection-start-column="108" selection-end-line="17" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/config/amazon/checkProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/pageElements.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -648,56 +635,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/config/browserDecision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-682">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/main/runTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/config/browserDecision.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-          <folding>
-            <element signature="method#afterScenario#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#waitForNSeconds#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iWaitForPage#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeTheUrlIs#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeTheUrlContains#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iClickElement#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iMouseHover#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeElement#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iFillBy#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeWebpageTitleAs#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeText#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeMyAddedProductIsOnTheList#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iSeeMyAddedProductIsNotOnTheList#0;class#ProjectStepDefinitions#0" />
-            <element signature="method#iRefreshThePage#0;class#ProjectStepDefinitions#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/features/scenarios.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="129" column="9" lean-forward="true" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-          <folding>
-            <element signature="e#65#2674#0" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar!/com/google/gson/JsonObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/config/selectDecision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/config/jsonParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/pageElements.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/stepdefs/ProjectStepDefinitions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/environmentVariables.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
