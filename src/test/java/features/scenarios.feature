@@ -124,7 +124,7 @@ Feature: Amazon - Insider Test Automation Project
 
 
 
-  @chrome @regression
+  @regression
   Scenario: 2 - second test
 
     Given I open amazon page
