@@ -6,12 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import stepdefs.ProjectStepDefinitions;
+import stepdefs.SeleniumStepDefinitions;
 import java.io.File;
 
 public class browserDecision {
 
-    private static Logger LOGGER = Logger.getLogger(ProjectStepDefinitions.class);
+    private static Logger LOGGER = Logger.getLogger(SeleniumStepDefinitions.class);
 
     public static WebDriver browser(String os, String browser) {
 
@@ -45,31 +45,33 @@ public class browserDecision {
 
     private static WebDriver options(String browser){
 
-        if (browser.equals("chrome")) {
+        switch (browser) {
+            case "chrome": {
 
-            ChromeOptions options;
+                ChromeOptions options;
 
-            options = new ChromeOptions();
-            options.addArguments("test-type");
-            options.addArguments("start-maximized");
-            options.addArguments("incognito");
-            options.addArguments("no-sandbox");
+                options = new ChromeOptions();
+                options.addArguments("test-type");
+                options.addArguments("start-fullscreen");
+                options.addArguments("incognito");
+                options.addArguments("no-sandbox");
 
-            return (new ChromeDriver(options));
+                return (new ChromeDriver(options));
 
-        } else if (browser.equals("firefox")) {
+            }
+            case "firefox": {
 
-            FirefoxOptions options;
+                FirefoxOptions options;
 
-            options = new FirefoxOptions();
-            options.addArguments("test-type");
-            options.addArguments("start-maximized");
+                options = new FirefoxOptions();
+                options.addArguments("test-type");
 
-            return (new FirefoxDriver(options));
+                return (new FirefoxDriver(options));
 
-        } else
-
-            return null;
+            }
+            default:
+                return null;
+        }
 
     }
 
